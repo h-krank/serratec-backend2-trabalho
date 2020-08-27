@@ -36,6 +36,7 @@ public class ContaBancariaService {
 		return conta;
 	}
 	
+	//FIXME Não permitir alterar o número da conta para um número já existente na lista
 	public Conta updateConta(Conta conta, Integer id) throws ContaNotFoundException {
 		Conta c = findConta(id);
 		

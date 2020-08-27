@@ -16,7 +16,9 @@ public class OperacaoService {
 	}
 
 	public Conta credito (Conta conta, Integer valor) throws ValorInsuficienteException {
+		//TODO configurar limite mínimo da operação no application.properties
 		if (valor < 50) {
+			//TODO Deveria haver 2 exceptinos: ValorInsuficiente (debito) e ValorMinimoCredito (credito)
 			throw new ValorInsuficienteException(conta.getNumero(), "Valor de depósito muito baixo");
 		}
 		

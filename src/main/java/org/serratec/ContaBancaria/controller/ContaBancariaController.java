@@ -46,6 +46,7 @@ public class ContaBancariaController {
 		return ResponseEntity.created(null).body(contaBancariaService.addConta(conta));
 	}
 	
+	//FIXME Precisa adionar anotação @PathVariable na "String operacao"
 	@PostMapping("/{numero}/{operacao}")
 	public Conta postOperacao(@PathVariable Integer numero, String operacao, @RequestParam Integer valor) throws ContaNotFoundException, ValorInsuficienteException, IllegalArgumentException{
 		Conta conta = contaBancariaService.findConta(numero);
